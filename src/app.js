@@ -5,13 +5,18 @@ import cors from "cors";
 const app = express();
 
 const corsOptions = {
-  origin: "https://ai-gen-jbps.vercel.app",  // Replace with your actual origin or use a function for dynamic origin
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Allowed HTTP methods
-  credentials: true, // Enable cookies and credentials if needed
+  origin: "https://ai-gen-jbps.vercel.app",
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  credentials: true,
+  allowedHeaders: ["Content-Type", "Authorization"], // Add allowed headers explicitly if needed
+  optionsSuccessStatus: 200, // Some legacy browsers (IE11, some Android browsers) choke on 204
 };
 
 app.use(cors(corsOptions));
 app.use(express.json());
+
+// Handle OPTIONS preflight for all routes
+app.options("*", cors(corsOptions));
 
 app.get("/", (req, res) => {
   res.send("hello there");
