@@ -19,7 +19,7 @@ function App() {
   async function reviewCode() {
     setIsLoading(true); // Show popup
     try {
-      const response = await axios.post("http://localhost:3000/ai/get-review", { prompt });
+      const response = await axios.post("https://ai-gen-tk3c.vercel.app/ai/get-review", { prompt });
       setReview(response.data);
     } catch (err) {
       console.error("Error reviewing code:", err);
