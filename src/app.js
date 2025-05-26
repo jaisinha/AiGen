@@ -5,7 +5,7 @@ import cors from "cors";
 const app = express();
 
 const corsOptions = {
-  origin: "https://ai-gen-jbps.vercel.app/",  // Replace with your actual origin or use a function for dynamic origin
+  origin: "https://ai-gen-jbps.vercel.app",  // Replace with your actual origin or use a function for dynamic origin
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Allowed HTTP methods
   credentials: true, // Enable cookies and credentials if needed
 };
