@@ -5,7 +5,7 @@ const app = express();
 import { config } from "dotenv";
 config();
 const corsOptions = {
-  origin: "https://ai-gen-89vj.vercel.app",
+  origin: "https://papaya-gumdrop-c23e59.netlify.app",
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   credentials: true,
   allowedHeaders: ["Content-Type", "Authorization"], // Add allowed headers explicitly if needed
